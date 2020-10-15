@@ -34,8 +34,9 @@ public class Main extends Application {
             @Override
             public void handle(Event event) {
                 try {
-                    float cel = Float.parseFloat(txta_grad.getText());
-                    txta_fahr.setText("" + cel);
+                    double cel = Double.parseDouble(txta_grad.getText());
+                    double fa=cel*1.8+32;
+                    txta_fahr.setText("" + fa);
                 }catch (Exception ignored){
 
                 }
