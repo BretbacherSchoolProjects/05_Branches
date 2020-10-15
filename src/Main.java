@@ -43,10 +43,16 @@ public class Main extends Application {
             }
         };
 
-        EventHandler handle_convToGrad=new EventHandler() {
+        EventHandler<MouseEvent> handle_convToGrad=new EventHandler() {
             @Override
             public void handle(Event event) {
+                try {
+                    double fa = Double.parseDouble(txta_fahr.getText());
+                    double cel=(fa-32)/1.8;
+                    txta_grad.setText("" + cel);
+                }catch (Exception ignored){
 
+                }
             }
         };
 
@@ -56,6 +62,7 @@ public class Main extends Application {
 
         //Adding EventHandlers
         b_convToFahr.setOnMouseClicked(handle_convToFahr);
+        b_convToGrad.setOnMouseClicked(handle_convToGrad);
 
         //Adding to root
         main_root.getChildren().addAll(l_grad, txta_grad, l_fahr, txta_fahr, b_convToFahr, b_convToGrad);
