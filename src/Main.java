@@ -30,10 +30,15 @@ public class Main extends Application {
         Button b_convToGrad=new Button("Convert F -> C");
 
         //EventHandler
-        EventHandler handle_convToFahr=new EventHandler() {
+        EventHandler<MouseEvent> handle_convToFahr=new EventHandler() {
             @Override
             public void handle(Event event) {
+                try {
+                    float cel = Float.parseFloat(txta_grad.getText());
+                    txta_fahr.setText("" + cel);
+                }catch (Exception ignored){
 
+                }
             }
         };
 
@@ -47,6 +52,9 @@ public class Main extends Application {
         //Styling
         txta_fahr.setMaxHeight(20);
         txta_grad.setMaxHeight(20);
+
+        //Adding EventHandlers
+        b_convToFahr.setOnMouseClicked(handle_convToFahr);
 
         //Adding to root
         main_root.getChildren().addAll(l_grad, txta_grad, l_fahr, txta_fahr, b_convToFahr, b_convToGrad);
