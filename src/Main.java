@@ -53,6 +53,7 @@ public class Main extends Application {
 
 
         //Stage config
+        System.out.println("test");
         Scene scene_root=new Scene(main_root);
         stage.setScene(scene_root);
         stage.setTitle("Moin");
